@@ -43,7 +43,7 @@ export const AddProgram = ({ school_id, school_name }) => {
       alert("Added Successfully");
       window.location.reload();
     } catch (error) {
-      if (error.response && error.response.status === 403) {
+      if (error.response && error.response.status === 406) {
         errorExist("Program already Listed");
         setInvalid("");
         setCorrect(true);
