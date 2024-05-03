@@ -372,7 +372,7 @@ export const Admin = () => {
                   <td className="p-2">
                     <img
                       className="w-42 h-32"
-                      src={`http://127.0.0.1:8000/media/${d.facility_image}`}
+                      src={`https://bjerg.pythonanywhere.com/media/${d.facility_image}`}
                       alt=""
                     />
                   </td>
@@ -410,7 +410,7 @@ export const Admin = () => {
                   <td className="p-2">
                     <img
                       className="w-42 h-32"
-                      src={`http://127.0.0.1:8000/media/${d.activity_image}`}
+                      src={`https://bjerg.pythonanywhere.com/media/${d.activity_image}`}
                       alt=""
                     />
                   </td>
@@ -446,7 +446,7 @@ export const Admin = () => {
                   <td className="p-2">
                     <img
                       className="w-42 h-32"
-                      src={`http://127.0.0.1:8000/media/${d.news_image}`}
+                      src={`https://bjerg.pythonanywhere.com/media/${d.news_image}`}
                       alt=""
                     />
                   </td>
@@ -484,7 +484,7 @@ export const Admin = () => {
                   <td className="p-2">
                     <img
                       className="w-48 h-32"
-                      src={`http://127.0.0.1:8000/media/${d.club_image}`}
+                      src={`https://bjerg.pythonanywhere.com/media/${d.club_image}`}
                       alt=""
                     />
                   </td>
@@ -516,7 +516,7 @@ export const Admin = () => {
                   <td className="p-2">
                     <img
                       className="w-42 h-32"
-                      src={`http://127.0.0.1:8000/media/${d.feature_image}`}
+                      src={`https://bjerg.pythonanywhere.com/media/${d.feature_image}`}
                       alt=""
                     />
                   </td>
