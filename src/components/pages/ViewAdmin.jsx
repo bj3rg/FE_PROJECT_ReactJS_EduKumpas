@@ -61,7 +61,7 @@ export const Admin = () => {
       });
     // Activity GET
     axios
-      .get("http://127.0.0.1:8000/api/admin/activities/0", {
+      .get("https://bjerg.pythonanywhere.com/api/admin/activities/0", {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
