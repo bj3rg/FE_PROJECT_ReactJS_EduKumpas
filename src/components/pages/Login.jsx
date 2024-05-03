@@ -49,7 +49,7 @@ export const Login = () => {
       }
     } catch (error) {
       console.log(error);
-      if (error.status === 403) {
+      if (error.response && error.response.status === 406) {
         setUnauthorized("Wait until the admin verifies your account");
         setInvalid("");
         setCorrect(true);
