@@ -22,7 +22,7 @@ export const AddAdmission = ({ school_id, school_name }) => {
     formData.append("fee", newAdmission.fee);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/admin/admission/0",
+        "https://bjerg.pythonanywhere.com/api/admin/admission/0",
         formData,
         {
           headers: {
