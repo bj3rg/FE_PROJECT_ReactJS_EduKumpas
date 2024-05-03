@@ -7,7 +7,7 @@ export const NewsCard = ({ schoolID }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://bjerg.pythonanywhere.com/api/api/schools-news",
+          "https://bjerg.pythonanywhere.com/api/schools-news",
           {
             params: { school: schoolID },
           }
