@@ -171,6 +171,7 @@ export const Sign_Up = () => {
                 className="form-control border-2 border rounded-md w-60 p-2"
                 onChange={handleChange}
               >
+                <option value=""></option>
                 <option value="College">College</option>
                 <option value="Senior High School">Senior High School</option>
                 <option value="Junior High School">Junior High School</option>
