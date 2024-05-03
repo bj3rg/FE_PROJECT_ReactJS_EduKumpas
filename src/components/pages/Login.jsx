@@ -7,6 +7,8 @@ export const Login = () => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [correct, setCorrect] = useState(false);
+  const [invalid, setInvalid] = useState("");
+  const [unauthorized, setUnauthorized] = useState("");
   const navigate = useNavigate();
 
   const handlePass = (e) => {
@@ -34,6 +36,7 @@ export const Login = () => {
         "https://bjerg.pythonanywhere.com/api/login",
         data
       );
+
       if (response.data !== "Incorrect user or password") {
         console.log(response);
 
@@ -43,7 +46,15 @@ export const Login = () => {
         console.log("THIS IS EMAIL", response.data.email);
         const email = response.data.email;
         navigate(`/representative/view-data/${email}`);
+      } else if (
+        response.data === "You are not authorized to access this resource."
+      ) {
+        setUnauthorized("Wait until the admin verifies your account");
+        setInvalid("");
+        setCorrect(true);
       } else {
+        setInvalid("Invalid user or password");
+        setUnauthorized("");
         setCorrect(true);
       }
     } catch (error) {
@@ -93,7 +104,10 @@ export const Login = () => {
             </div>
             {correct && (
               <div className="bg-[#F5656561] text-sm border-[1px] border-[#FF000061] px-[20px] py-[5px] rounded-md">
-                <h1>Incorrect username or password</h1>
+                <h1>
+                  {unauthorized}
+                  {invalid}
+                </h1>
               </div>
             )}
             <div className="text-center">
