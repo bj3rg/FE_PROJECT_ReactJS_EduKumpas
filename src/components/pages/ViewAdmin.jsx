@@ -24,7 +24,7 @@ export const Admin = () => {
     }
     // SCHOOL
     axios
-      .get(`http://127.0.0.1:8000/api/admin/schools/${email}`, {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/schools/${email}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -41,7 +41,7 @@ export const Admin = () => {
       });
     // Admission GET
     axios
-      .get("http://127.0.0.1:8000/api/admin/admission/0", {
+      .get("https://bjerg.pythonanywhere.com/api/admin/admission/0", {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -51,7 +51,7 @@ export const Admin = () => {
       });
     // Offer GET
     axios
-      .get("http://127.0.0.1:8000/api/admin/offered/0", {
+      .get("https://bjerg.pythonanywhere.com/api/admin/offered/0", {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -71,7 +71,7 @@ export const Admin = () => {
       });
     // Facility GET
     axios
-      .get("http://127.0.0.1:8000/api/admin/facilities/0", {
+      .get("https://bjerg.pythonanywhere.com/api/admin/facilities/0", {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -83,7 +83,7 @@ export const Admin = () => {
       });
     //Club GET
     axios
-      .get("http://127.0.0.1:8000/api/admin/clubs/0", {
+      .get("https://bjerg.pythonanywhere.com/api/admin/clubs/0", {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -97,7 +97,7 @@ export const Admin = () => {
       });
     //Features GET
     axios
-      .get("http://127.0.0.1:8000/api/admin/features/0", {
+      .get("https://bjerg.pythonanywhere.com/api/admin/features/0", {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -111,7 +111,7 @@ export const Admin = () => {
       });
     //News GET
     axios
-      .get("http://127.0.0.1:8000/api/admin/news/0", {
+      .get("https://bjerg.pythonanywhere.com/api/admin/news/0", {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -128,11 +128,14 @@ export const Admin = () => {
 
   const handleDeleteAdm = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/admin/admission/${id}`, {
-        headers: {
-          Authorization: `Token ${sessionStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `https://bjerg.pythonanywhere.com/api/admin/admission/${id}`,
+        {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
       alert("Admission deleted successfully");
       window.location.reload();
     } catch (error) {
@@ -142,11 +145,14 @@ export const Admin = () => {
   };
   const handleDeleteActi = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/admin/activities/${id}`, {
-        headers: {
-          Authorization: `Token ${sessionStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `https://bjerg.pythonanywhere.com/api/admin/activities/${id}`,
+        {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
       alert("Activity deleted successfully");
       window.location.reload();
     } catch (error) {
@@ -156,11 +162,14 @@ export const Admin = () => {
   };
   const handleDeletePro = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/admin/offered/${id}`, {
-        headers: {
-          Authorization: `Token ${sessionStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `https://bjerg.pythonanywhere.com/api/admin/offered/${id}`,
+        {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
       alert("Program deleted successfully");
       window.location.reload();
     } catch (error) {
@@ -170,11 +179,14 @@ export const Admin = () => {
   };
   const handleDeleteFaci = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/admin/facilities/${id}`, {
-        headers: {
-          Authorization: `Token ${sessionStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `https://bjerg.pythonanywhere.com/api/admin/facilities/${id}`,
+        {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
       alert("Facilities deleted successfully");
       window.location.reload();
     } catch (error) {
@@ -184,11 +196,14 @@ export const Admin = () => {
   };
   const handleDeleteNews = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/admin/news/${id}`, {
-        headers: {
-          Authorization: `Token ${sessionStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `https://bjerg.pythonanywhere.com/api/admin/news/${id}`,
+        {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
       alert("News deleted successfully");
       window.location.reload();
     } catch (error) {
@@ -198,11 +213,14 @@ export const Admin = () => {
   };
   const handleDeleteClub = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/admin/clubs/${id}`, {
-        headers: {
-          Authorization: `Token ${sessionStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `https://bjerg.pythonanywhere.com/api/admin/clubs/${id}`,
+        {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
       alert("Activity deleted successfully");
       window.location.reload();
     } catch (error) {
@@ -212,11 +230,14 @@ export const Admin = () => {
   };
   const handleDeleteFeat = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/admin/features/${id}`, {
-        headers: {
-          Authorization: `Token ${sessionStorage.getItem("token")}`,
-        },
-      });
+      await axios.delete(
+        `https://bjerg.pythonanywhere.com/api/admin/features/${id}`,
+        {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
       alert("Feature deleted successfully");
       window.location.reload();
     } catch (error) {
