@@ -27,7 +27,7 @@ export const Search = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/schools-search"
+        "https://bjerg.pythonanywhere.com/api/schools-search"
       );
       console.log(response.data);
       setSchool(response.data);
@@ -38,7 +38,7 @@ export const Search = () => {
 
     try {
       const response2 = await axios.get(
-        "http://127.0.0.1:8000/api/schools-offered"
+        "https://bjerg.pythonanywhere.com/api/schools-offered"
       );
       console.log(response2.data);
       setProgram(response2.data);
