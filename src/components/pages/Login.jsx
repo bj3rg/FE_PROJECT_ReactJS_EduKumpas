@@ -31,7 +31,7 @@ export const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/login",
+        "https://bjerg.pythonanywhere.com/api/api/login",
         data
       );
       if (response.data !== "Incorrect user or password") {

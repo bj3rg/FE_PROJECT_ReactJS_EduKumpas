@@ -35,7 +35,7 @@ export const Sign_Up = () => {
 
     try {
       const response = await axios.post(
-        "https://bjerg.pythonanywhere.com/api/representative",
+        "https://bjerg.pythonanywhere.com/api/api/representative",
         formData
       );
       console.log(response.data);
