@@ -46,7 +46,10 @@ export const Login = () => {
         console.log("THIS IS EMAIL", response.data.email);
         const email = response.data.email;
         navigate(`/representative/view-data/${email}`);
-      } else if (response.data.status === 403) {
+      }
+    } catch (error) {
+      console.log(error);
+      if (error.status === 403) {
         setUnauthorized("Wait until the admin verifies your account");
         setInvalid("");
         setCorrect(true);
@@ -55,9 +58,6 @@ export const Login = () => {
         setUnauthorized("");
         setCorrect(true);
       }
-    } catch (error) {
-      console.log(error);
-      setCorrect(true);
     }
   };
   return (
