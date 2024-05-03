@@ -7,7 +7,7 @@ export const NewsCard = ({ schoolID }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/schools-news",
+          "https://bjerg.pythonanywhere.com/api/schools-news",
           {
             params: { school: schoolID },
           }
@@ -37,7 +37,7 @@ export const NewsCard = ({ schoolID }) => {
             <div className="w-[100%] h-[100%] lg:w-[60%] lg:h-[60%] relative">
               <img
                 className="w-full h-full object-cover object-center rounded-xl"
-                src={`http://127.0.0.1:8000/media/${value.news_image}`}
+                src={`https://bjerg.pythonanywhere.com/media/${value.news_image}`}
                 alt=""
               />
             </div>

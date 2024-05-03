@@ -8,7 +8,7 @@ export const Features = ({ schoolID }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/schools-features",
+          "https://bjerg.pythonanywhere.com/api/schools-features",
           {
             params: { school: schoolID },
           }
@@ -29,7 +29,7 @@ export const Features = ({ schoolID }) => {
         <div key={index} className="flex justify-center">
           <img
             className="w-5/5 h-5/5 object-fill rounded-xl"
-            src={`http://127.0.0.1:8000/media/${info.feature_image}`}
+            src={`https://bjerg.pythonanywhere.com/media/${info.feature_image}`}
             alt=""
           />
         </div>

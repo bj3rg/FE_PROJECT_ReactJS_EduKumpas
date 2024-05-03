@@ -27,7 +27,7 @@ export const SchoolCard = ({
           {/* <p>{school.school_logo}</p> */}
           <img
             className="w-16 h-16"
-            src={`http://127.0.0.1:8000${school_logo}`}
+            src={`https://bjerg.pythonanywhere.com/${school_logo}`}
             alt="Image"
           />
 

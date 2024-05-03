@@ -41,7 +41,7 @@ function SchoolsListCard({ school_type }) {
               {/* <p>{school.school_logo}</p> */}
               <img
                 className="w-24 h-24"
-                src={`http://127.0.0.1:8000/media/${school.school_logo}`}
+                src={`https://bjerg.pythonanywhere.com/media/${school.school_logo}`}
                 alt="Image"
               />
 
