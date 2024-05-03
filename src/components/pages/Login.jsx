@@ -46,9 +46,7 @@ export const Login = () => {
         console.log("THIS IS EMAIL", response.data.email);
         const email = response.data.email;
         navigate(`/representative/view-data/${email}`);
-      } else if (
-        response.data === "You are not authorized to access this resource."
-      ) {
+      } else if (response.data.status === 403) {
         setUnauthorized("Wait until the admin verifies your account");
         setInvalid("");
         setCorrect(true);
