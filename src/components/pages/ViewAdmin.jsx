@@ -51,7 +51,7 @@ export const Admin = () => {
       });
     // Offer GET
     axios
-      .get("https://bjerg.pythonanywhere.com/api/admin/offered/0", {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/offered/${school}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -61,7 +61,7 @@ export const Admin = () => {
       });
     // Activity GET
     axios
-      .get("https://bjerg.pythonanywhere.com/api/admin/activities/0", {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/activities/${school}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -71,7 +71,7 @@ export const Admin = () => {
       });
     // Facility GET
     axios
-      .get("https://bjerg.pythonanywhere.com/api/admin/facilities/0", {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/facilities/${school}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -83,7 +83,7 @@ export const Admin = () => {
       });
     //Club GET
     axios
-      .get("https://bjerg.pythonanywhere.com/api/admin/clubs/0", {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/clubs/${school}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -97,7 +97,7 @@ export const Admin = () => {
       });
     //Features GET
     axios
-      .get("https://bjerg.pythonanywhere.com/api/admin/features/0", {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/features/${school}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
@@ -111,7 +111,7 @@ export const Admin = () => {
       });
     //News GET
     axios
-      .get("https://bjerg.pythonanywhere.com/api/admin/news/0", {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/news/${school}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
