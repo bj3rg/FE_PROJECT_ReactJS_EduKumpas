@@ -16,7 +16,7 @@ export const Admin = () => {
   const [schoolName, setSchoolName] = useState("");
   const navigate = useNavigate();
   const token = sessionStorage.getItem("token");
-  const { email } = useParams();
+  const { email, school } = useParams();
   useEffect(() => {
     if (!token) {
       navigate("/login");
@@ -41,7 +41,7 @@ export const Admin = () => {
       });
     // Admission GET
     axios
-      .get("https://bjerg.pythonanywhere.com/api/admin/admission/0", {
+      .get(`https://bjerg.pythonanywhere.com/api/admin/admission/${school}`, {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },

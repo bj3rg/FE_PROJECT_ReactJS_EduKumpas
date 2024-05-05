@@ -22,9 +22,8 @@ export const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     let data;
-    console.log("Hellow Owrld");
     if (identifier && password) {
-      console.log({ identifier, password });
+      // console.log({ identifier, password });
       data = {
         identifier: identifier,
         password: password,
@@ -44,8 +43,10 @@ export const Login = () => {
         sessionStorage.setItem("token", token);
         setCorrect(false);
         console.log("THIS IS EMAIL", response.data.email);
+        console.log("THIS IS ID", response.data.school);
         const email = response.data.email;
-        navigate(`/representative/view-data/${email}`);
+        const id = response.data.school;
+        navigate(`/representative/view-data/${email}/${school}`);
       }
     } catch (error) {
       console.log(error);

@@ -123,7 +123,7 @@ function App() {
           }
         />
         <Route
-          path="/representative/view-data/:email"
+          path="/representative/view-data/:email/:school"
           element={<ViewAdmin />}
         />
         <Route
