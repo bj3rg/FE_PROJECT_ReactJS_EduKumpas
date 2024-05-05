@@ -45,7 +45,7 @@ export const Login = () => {
         console.log("THIS IS EMAIL", response.data.email);
         console.log("THIS IS ID", response.data.school);
         const email = response.data.email;
-        const id = response.data.school;
+        const school = response.data.school;
         navigate(`/representative/view-data/${email}/${school}`);
       }
     } catch (error) {
