@@ -75,6 +75,12 @@ export const AddFacilities = ({ school_id, school_name }) => {
             inputDisplay={"School"}
             type={"text"}
             value={school_name}
+            handleChange={(e) => {
+              setNewFacility((prev) => ({
+                ...prev,
+                school: e.target.value,
+              }));
+            }}
           />
         </div>
         <div className="w-full flex justify-between ">
@@ -122,20 +128,12 @@ export const AddFacilities = ({ school_id, school_name }) => {
         )}
 
         <div className="w-full flex gap-[20px] mt-5 justify-between">
-          <button className="p-[5px] bg-white rounded-[10px] text-black min-w-[70px] cursor-pointer">
-            Clear
-          </button>
           <button
             onClick={handleAdd}
             className="p-[5px] bg-white rounded-[10px] text-black min-w-[70px] cursor-pointer"
           >
             Add
           </button>
-          {/* <ButtonComp2
-            text="Add"
-            otherStyle={"p-[5px] rounded-[10px]"}
-            handleClick={handleClick}
-          /> */}
         </div>
       </div>
     </div>

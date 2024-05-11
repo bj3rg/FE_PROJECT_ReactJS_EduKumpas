@@ -80,6 +80,12 @@ function AddActivity({ school_id, school_name }) {
             inputDisplay={"School"}
             type={"text"}
             value={school_name}
+            handleChange={(e) => {
+              setNewActivity((prev) => ({
+                ...prev,
+                school: e.target.value,
+              }));
+            }}
           />
         </div>
         <div className="w-full flex justify-between">
