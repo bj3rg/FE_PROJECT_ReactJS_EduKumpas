@@ -38,14 +38,11 @@ export const Login = () => {
 
       if (response.data !== "Incorrect user or password") {
         console.log(response);
-
+        const email = response.data.email;
+        const school = response.data.school;
         const token = response.data.token;
         sessionStorage.setItem("token", token);
         setCorrect(false);
-        console.log("THIS IS EMAIL", response.data.email);
-        console.log("THIS IS ID", response.data.school);
-        const email = response.data.email;
-        const school = response.data.school;
         navigate(`/representative/view-data/${email}/${school}`);
       }
     } catch (error) {

@@ -23,6 +23,7 @@ export const Admin = () => {
       return;
     }
     // SCHOOL
+
     axios
       .get(`https://bjerg.pythonanywhere.com/api/admin/schools/${email}`, {
         headers: {
@@ -33,10 +34,8 @@ export const Admin = () => {
         const schoolData = res.data[0];
         const school_id = schoolData.id;
         const school_name = schoolData.school_name;
-        console.log(schoolName);
         setSchoolName(school_name);
         setSchoolId(school_id);
-
         setData(res.data);
       });
     // Admission GET
@@ -45,6 +44,7 @@ export const Admin = () => {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
+        params: { school: school },
       })
       .then((res) => {
         setExp(res.data);
@@ -55,6 +55,7 @@ export const Admin = () => {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
+        params: { school: school },
       })
       .then((res) => {
         setOffer(res.data);
@@ -65,6 +66,7 @@ export const Admin = () => {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
+        params: { school: school },
       })
       .then((res) => {
         setActivity(res.data);
@@ -75,10 +77,9 @@ export const Admin = () => {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
+        params: { school: school },
       })
       .then((res) => {
-        const expensesData = res.data[0];
-        const school_id = expensesData.id;
         setFacility(res.data);
       });
     //Club GET
@@ -87,12 +88,9 @@ export const Admin = () => {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
+        params: { school: school },
       })
       .then((res) => {
-        const expensesData = res.data[0];
-        const school_id = expensesData.id;
-        console.log("Here");
-        console.log(school_id);
         setClub(res.data);
       });
     //Features GET
@@ -101,12 +99,9 @@ export const Admin = () => {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
+        params: { school: school },
       })
       .then((res) => {
-        const expensesData = res.data[0];
-        const school_id = expensesData.id;
-        console.log("Here");
-        console.log(school_id);
         setFeature(res.data);
       });
     //News GET
@@ -115,12 +110,9 @@ export const Admin = () => {
         headers: {
           Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
+        params: { school: school },
       })
       .then((res) => {
-        const expensesData = res.data[0];
-        const school_id = expensesData.id;
-        console.log("Here");
-        console.log(school_id);
         setNews(res.data);
       })
       .catch((err) => console.log(err));
@@ -136,7 +128,6 @@ export const Admin = () => {
           },
         }
       );
-      alert("Admission deleted successfully");
       window.location.reload();
     } catch (error) {
       console.error("Error deleting admission:", error);
@@ -255,14 +246,23 @@ export const Admin = () => {
       />
       <div className="flex flex-col justify-center items-center">
         <div className="flex justify-center mt-12">
-          <table className="table-auto border">
+          <table className="table-auto border w-[1400px]">
             <thead>
               <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">name</th>
-                <th className="p-2 border border-slate-600">website</th>
-                <th className="p-2 border border-slate-600">public/private</th>
-                <th className="p-2 border border-slate-600">number</th>
-                <th className="p-2 border border-slate-600">address</th>
+                <th className="p-2 border border-slate-600 w-1/4">
+                  School Name
+                </th>
+                <th className="p-2 border border-slate-600 w-1/4">
+                  School Website
+                </th>
+                <th className="p-2 border border-slate-600 w-1/4">
+                  School Address
+                </th>
+                <th className="p-2 border border-slate-600 w-1/4">
+                  School Type
+                </th>
+                <th className="p-2 border border-slate-600 ">Public/Private</th>
+
                 <th className="p-2 border border-slate-600"></th>
               </tr>
             </thead>
@@ -271,9 +271,10 @@ export const Admin = () => {
                 <tr key={i}>
                   <td className="p-2">{d.school_name}</td>
                   <td className="p-2">{d.school_website}</td>
-                  <td className="p-2">{d.public_private}</td>
-                  <td className="p-2">{d.school_type}</td>
                   <td className="p-2">{d.school_location}</td>
+                  <td className="p-2">{d.school_type}</td>
+                  <td className="p-2">{d.public_private}</td>
+
                   <td className="p-2">
                     <button className="w-8">
                       <img src={editIcon} alt="" />
@@ -284,43 +285,16 @@ export const Admin = () => {
             </tbody>
           </table>
         </div>
-        {/* EXPENSES */}
-        <div className="flex justify-center mt-12">
-          <table className="table-auto border border-collapse">
-            <thead>
-              <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">Expenses Name</th>
-                <th className="p-2 border border-slate-600">Description</th>
-                <th className="p-2 border border-slate-600">Cost</th>
-                <th className="border border-slate-600"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {exp.map((d, i) => (
-                <tr key={i}>
-                  <td className="p-2">{d.name}</td>
-                  <td className="p-2">{d.description}</td>
-                  <td className="p-2">{d.fee}</td>
-                  <td className="p-2">
-                    <button
-                      onClick={() => handleDeleteAdm(d.id)}
-                      className="w-8"
-                    >
-                      <img src={editIcon} alt="" />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+
         {/* PROGRAM OFFERED */}
-        <div className="flex justify-center w-[60%] mt-12">
-          <table className="table-auto border border-collapse">
+        <div className="flex justify-center mt-12">
+          <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">Program Name</th>
-                <th className="p-2 border border-slate-600">
+                <th className="p-2 border border-slate-600 w-1/4">
+                  Program Name
+                </th>
+                <th className="p-2 border border-slate-600 w-1/2">
                   Program Description
                 </th>
                 <th className="p-2 border border-slate-600">Start Range</th>
@@ -350,13 +324,49 @@ export const Admin = () => {
             </tbody>
           </table>
         </div>
-        {/* FACILITIES */}
-        <div className="flex justify-center w-[60%] mt-12">
-          <table className="table-auto border border-collapse">
+        {/* EXPENSES */}
+        <div className="flex justify-center mt-12">
+          <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">Facility Name</th>
-                <th className="p-2 border border-slate-600">
+                <th className="p-2 border border-slate-600 w-1/4">
+                  Expenses Name
+                </th>
+                <th className="p-2 border border-slate-600 w-1/2">
+                  Description
+                </th>
+                <th className="p-2 border border-slate-600 w-1/4">Cost</th>
+                <th className="border border-slate-600"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {exp.map((d, i) => (
+                <tr key={i}>
+                  <td className="p-2">{d.name}</td>
+                  <td className="p-2">{d.description}</td>
+                  <td className="p-2">{d.fee}</td>
+                  <td className="p-2">
+                    <button
+                      onClick={() => handleDeleteAdm(d.id)}
+                      className="w-8"
+                    >
+                      <img src={editIcon} alt="" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {/* FACILITIES */}
+        <div className="flex justify-center  mt-12">
+          <table className="table-auto border border-collapse w-[1400px]">
+            <thead>
+              <tr className="header-row text-left">
+                <th className="p-2 border border-slate-600 w-1/4">
+                  Facility Name
+                </th>
+                <th className="p-2 border border-slate-600 w-1/2">
                   Facility Description
                 </th>
                 <th className="p-2 border border-slate-600">Image</th>
@@ -371,7 +381,7 @@ export const Admin = () => {
                   <td className="p-2">{d.facility_description}</td>
                   <td className="p-2">
                     <img
-                      className="w-42 h-32"
+                      className="w-1/2 h-3/4"
                       src={`https://bjerg.pythonanywhere.com/media/${d.facility_image}`}
                       alt=""
                     />
@@ -391,12 +401,14 @@ export const Admin = () => {
           </table>
         </div>
         {/* ACTIVITIES */}
-        <div className="flex justify-center w-[60%] mt-12">
-          <table className="table-auto border border-collapse">
+        <div className="flex justify-center mt-12">
+          <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">Activity Name</th>
-                <th className="p-2 border border-slate-600">
+                <th className="p-2 border border-slate-600 w-1/4">
+                  Activity Name
+                </th>
+                <th className="p-2 border border-slate-600 w-1/2">
                   Activity Description
                 </th>
                 <th className="p-2 border border-slate-600">Activity Image</th>
@@ -409,7 +421,7 @@ export const Admin = () => {
                   <td className="p-2">{d.activity_description}</td>
                   <td className="p-2">
                     <img
-                      className="w-42 h-32"
+                      className="w-1/2 h-3/4"
                       src={`https://bjerg.pythonanywhere.com/media/${d.activity_image}`}
                       alt=""
                     />
@@ -428,13 +440,17 @@ export const Admin = () => {
           </table>
         </div>
         {/* NEWS */}
-        <div className="flex justify-center w-[60%] mt-12">
-          <table className="table-auto border border-collapse">
+        <div className="flex justify-center mt-12">
+          <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">News Header</th>
-                <th className="p-2 border border-slate-600">News Body</th>
-                <th className="p-2 border border-slate-600">News Image</th>
+                <th className="p-2 border border-slate-600 w-1/4">
+                  News Header
+                </th>
+                <th className="p-2 border border-slate-600  w-1/2">
+                  News Body
+                </th>
+                <th className="p-2 border border-slate-600 ">News Image</th>
                 <th className="border border-slate-600"></th>
               </tr>
             </thead>
@@ -445,7 +461,7 @@ export const Admin = () => {
                   <td className="p-2">{d.news_description}</td>
                   <td className="p-2">
                     <img
-                      className="w-42 h-32"
+                      className="w-1/2 h-3/4"
                       src={`https://bjerg.pythonanywhere.com/media/${d.news_image}`}
                       alt=""
                     />
@@ -464,15 +480,15 @@ export const Admin = () => {
           </table>
         </div>
         {/* CLUBS */}
-        <div className="flex justify-center w-[60%] mt-12">
-          <table className="table-auto border border-collapse">
+        <div className="flex justify-center mt-12">
+          <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">Club Name</th>
-                <th className="p-2 border border-slate-600">
+                <th className="p-2 border border-slate-600 w-1/4">Club Name</th>
+                <th className="p-2 border border-slate-600 w-1/2">
                   Club Description
                 </th>
-                <th className="p-2 border border-slate-600">Club Image</th>
+                <th className="p-2 border border-slate-600 ">Club Image</th>
                 <th className="border border-slate-600"></th>
               </tr>
             </thead>
@@ -483,7 +499,7 @@ export const Admin = () => {
                   <td className="p-2">{d.club_description}</td>
                   <td className="p-2">
                     <img
-                      className="w-48 h-32"
+                      className="w-1/2 h-3/4"
                       src={`https://bjerg.pythonanywhere.com/media/${d.club_image}`}
                       alt=""
                     />
@@ -502,11 +518,11 @@ export const Admin = () => {
           </table>
         </div>
         {/* Features */}
-        <div className="flex justify-center w-[60%] mt-12">
-          <table className="table-auto border border-collapse">
+        <div className="flex justify-center mt-12 mb-12">
+          <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600">Features</th>
+                <th className="p-2 border border-slate-600 w-full">Features</th>
                 <th className="border border-slate-600"></th>
               </tr>
             </thead>

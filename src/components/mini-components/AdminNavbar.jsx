@@ -25,10 +25,10 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
         <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 py-4 text-xl">
           <li>
             <NavLink
-              to={`/representative/view-data/${email}`}
+              to={`/representative/view-data/${email}/${school_id}`}
               className="hover:text-gray-500"
             >
-              View Data
+              Delete Data
             </NavLink>
           </li>
           <li>
@@ -41,7 +41,7 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
           </li>
         </ul>
       </nav>
-      <div className="flex items-center gap-6 py-2">
+      <div className="flex justify-end w-[200px] gap-6 py-2">
         <button
           className="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-[#F22222]"
           onClick={() => {
@@ -51,16 +51,6 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
         >
           Logout
         </button>
-
-        <img
-          src={navIcon}
-          alt=""
-          onClick={onToggleMenu}
-          className={`cursor-pointer w-8 h-8 md:hidden transform duration-300 ${
-            isMenuOpen ? "rotate-45" : ""
-          }`}
-        />
-        <i></i>
       </div>
     </header>
   );
