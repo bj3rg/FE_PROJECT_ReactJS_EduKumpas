@@ -137,6 +137,7 @@ export const AdminDelete = () => {
           },
         }
       );
+      alert("Expenses deleted successfully");
       window.location.reload();
     } catch (error) {
       console.error("Error deleting admission:", error);
