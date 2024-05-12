@@ -14,8 +14,9 @@ import School_List_Preschool from "./components/pages/Schools-List-Preschool";
 import Main_School from "./components/pages/Main-School";
 import Sign_Up from "./components/pages/Sign-Up";
 import Login from "./components/pages/Login";
-import ViewAdmin from "./components/pages/ViewAdmin";
-import AddDataAdmin from "./components/pages/AddDataAdmin";
+import AdminUpdate from "./components/pages/AdminUpdate";
+import AdminAddData from "./components/pages/AdminAddData";
+import AdminDelete from "./components/pages/AdminDelete";
 import Add from "./components/mini-components/AddActivity";
 
 function App() {
@@ -123,12 +124,16 @@ function App() {
           }
         />
         <Route
-          path="/representative/view-data/:email/:school"
-          element={<ViewAdmin />}
+          path="/representative/update-data/:email/:school"
+          element={<AdminUpdate />}
         />
         <Route
           path="/representative/add-data/:email/:school_id/:school_name"
-          element={<AddDataAdmin />}
+          element={<AdminAddData />}
+        />
+        <Route
+          path="/representative/delete-data/:email/:school"
+          element={<AdminDelete />}
         />
         {/* Route without Navbar */}
         <Route path="/sign-up" element={<Sign_Up />} />

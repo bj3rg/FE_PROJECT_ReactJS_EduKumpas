@@ -22,7 +22,7 @@ export const AddAdmission = ({ school_id, school_name }) => {
     formData.append("fee", newAdmission.fee);
     try {
       const response = await axios.post(
-        "https://bjerg.pythonanywhere.com/api/admin/admission/0",
+        "https://bjerg.pythonanywhere.com/api/admin/admission/0/",
         formData,
         {
           headers: {
@@ -58,7 +58,7 @@ export const AddAdmission = ({ school_id, school_name }) => {
           <FieldInput
             inputDisplay={"School"}
             type={"text"}
-            value={school_name}
+            value={school_name || ""}
             handleChange={(e) => {
               setNewAdmission((prev) => ({
                 ...prev,

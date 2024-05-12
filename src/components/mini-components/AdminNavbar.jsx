@@ -25,18 +25,27 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
         <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 py-4 text-xl">
           <li>
             <NavLink
-              to={`/representative/view-data/${email}/${school_id}`}
-              className="hover:text-gray-500"
-            >
-              Delete Data
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to={`/representative/add-data/${email}/${school_id}/${school_name}`}
               className="hover:text-gray-500"
             >
               Add Data
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={`/representative/update-data/${email}/${school_id}`}
+              className="hover:text-gray-500"
+            >
+              Update Data
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to={`/representative/delete-data/${email}/${school_id}`}
+              className="hover:text-gray-500"
+            >
+              Delete Data
             </NavLink>
           </li>
         </ul>

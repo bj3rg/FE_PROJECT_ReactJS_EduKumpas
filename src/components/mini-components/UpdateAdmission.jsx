@@ -72,7 +72,7 @@ export const UpdateAdmission = ({
       </div>
       <div className="flex flex-col gap-[10px]">
         {/* first row */}
-        {/* <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between">
           <FieldInput
             inputDisplay={"School"}
             type={"text"}
@@ -84,7 +84,7 @@ export const UpdateAdmission = ({
               }));
             }}
           />
-        </div> */}
+        </div>
         <div className="w-full flex justify-between ">
           <FieldInput
             inputDisplay={"Name"}

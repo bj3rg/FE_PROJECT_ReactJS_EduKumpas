@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import imgTest from "../../assets/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Admin from "./ViewAdmin";
+import Admin from "./AdminUpdate";
 export const Login = () => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +43,7 @@ export const Login = () => {
         const token = response.data.token;
         sessionStorage.setItem("token", token);
         setCorrect(false);
-        navigate(`/representative/view-data/${email}/${school}`);
+        navigate(`/representative/update-data/${email}/${school}`);
       }
     } catch (error) {
       console.log(error);

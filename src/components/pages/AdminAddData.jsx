@@ -8,6 +8,7 @@ import AddFeatures from "../mini-components/AddFeatures";
 import AddFacilities from "../mini-components/AddFacilities";
 import Admin_Navbar from "../mini-components/AdminNavbar";
 import { useParams } from "react-router-dom";
+import UpdateAdmission from "../mini-components/UpdateAdmission";
 
 export const AddDataAdmin = () => {
   const { email, school_id, school_name } = useParams();
@@ -47,6 +48,10 @@ export const AddDataAdmin = () => {
           school_name={school_name}
         ></AddFeatures>
       </div>
+      <UpdateAdmission
+        school_id={school_id}
+        school_name={school_name}
+      ></UpdateAdmission>
     </div>
   );
 };

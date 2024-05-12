@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import editIcon from "../../assets/icons8-edit-50.png";
+import deleteIcon from "../../assets/delete.png";
+import editIcon from "../../assets/edit.png";
 import Admin_Navbar from "../mini-components/AdminNavbar";
-export const Admin = () => {
+import UpdateAdmissionModal from "../mini-components/UpdateAdmission";
+import UpdateActivityModal from "../mini-components/UpdateActivity";
+export const AdminDelete = () => {
   const [data, setData] = useState([]);
   const [exp, setExp] = useState([]);
   const [offer, setOffer] = useState([]);
@@ -17,6 +20,12 @@ export const Admin = () => {
   const navigate = useNavigate();
   const token = sessionStorage.getItem("token");
   const { email, school } = useParams();
+
+  const closeModal = () => {
+    setShowUpdateModal(false);
+    setShowUpdateModal2(false);
+  };
+
   useEffect(() => {
     if (!token) {
       navigate("/login");
@@ -134,6 +143,7 @@ export const Admin = () => {
       alert("Error deleting admission");
     }
   };
+
   const handleDeleteActi = async (id) => {
     try {
       await axios.delete(
@@ -277,7 +287,7 @@ export const Admin = () => {
 
                   <td className="p-2">
                     <button className="w-8">
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -316,7 +326,7 @@ export const Admin = () => {
                       onClick={() => handleDeletePro(d.id)}
                       className="w-8"
                     >
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -324,6 +334,7 @@ export const Admin = () => {
             </tbody>
           </table>
         </div>
+
         {/* EXPENSES */}
         <div className="flex justify-center mt-12">
           <table className="table-auto border border-collapse w-[1400px]">
@@ -345,12 +356,13 @@ export const Admin = () => {
                   <td className="p-2">{d.name}</td>
                   <td className="p-2">{d.description}</td>
                   <td className="p-2">{d.fee}</td>
+
                   <td className="p-2">
                     <button
                       onClick={() => handleDeleteAdm(d.id)}
                       className="w-8"
                     >
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -358,6 +370,7 @@ export const Admin = () => {
             </tbody>
           </table>
         </div>
+
         {/* FACILITIES */}
         <div className="flex justify-center  mt-12">
           <table className="table-auto border border-collapse w-[1400px]">
@@ -392,7 +405,7 @@ export const Admin = () => {
                       onClick={() => handleDeleteFaci(d.id)}
                       className="w-8"
                     >
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -412,6 +425,7 @@ export const Admin = () => {
                   Activity Description
                 </th>
                 <th className="p-2 border border-slate-600">Activity Image</th>
+                <th className="border border-slate-600"></th>
               </tr>
             </thead>
             <tbody>
@@ -431,7 +445,7 @@ export const Admin = () => {
                       onClick={() => handleDeleteActi(d.id)}
                       className="w-8"
                     >
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -471,7 +485,7 @@ export const Admin = () => {
                       onClick={() => handleDeleteNews(d.id)}
                       className="w-8"
                     >
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -509,7 +523,7 @@ export const Admin = () => {
                       onClick={() => handleDeleteClub(d.id)}
                       className="w-8"
                     >
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -541,7 +555,7 @@ export const Admin = () => {
                       onClick={() => handleDeleteFeat(d.id)}
                       className="w-8"
                     >
-                      <img src={editIcon} alt="" />
+                      <img src={deleteIcon} alt="" />
                     </button>
                   </td>
                 </tr>
@@ -554,4 +568,4 @@ export const Admin = () => {
   );
 };
 
-export default Admin;
+export default AdminDelete;
