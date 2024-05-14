@@ -43,7 +43,7 @@ export const Login = () => {
         const token = response.data.token;
         sessionStorage.setItem("token", token);
         setCorrect(false);
-        navigate(`/representative/update-data/${email}/${school}`);
+        navigate(`/representative/school-profile/${email}/${school}`);
       }
     } catch (error) {
       console.log(error);

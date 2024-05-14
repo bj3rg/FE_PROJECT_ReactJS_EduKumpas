@@ -17,7 +17,7 @@ import Login from "./components/pages/Login";
 import AdminUpdate from "./components/pages/AdminUpdate";
 import AdminAddData from "./components/pages/AdminAddData";
 import AdminDelete from "./components/pages/AdminDelete";
-import Add from "./components/mini-components/AddActivity";
+import AdminSchool from "./components/pages/AdminSchool";
 
 function App() {
   return (
@@ -135,6 +135,10 @@ function App() {
           path="/representative/delete-data/:email/:school"
           element={<AdminDelete />}
         />
+        <Route
+          path="/representative/school-profile/:email/:school"
+          element={<AdminSchool />}
+        ></Route>
         {/* Route without Navbar */}
         <Route path="/sign-up" element={<Sign_Up />} />
         <Route path="/login" element={<Login />} />
