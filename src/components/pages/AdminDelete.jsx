@@ -256,47 +256,8 @@ export const AdminDelete = () => {
         school_name={schoolName}
       />
       <div className="flex flex-col justify-center items-center">
-        <div className="flex justify-center mt-12">
-          <table className="table-auto border w-[1400px]">
-            <thead>
-              <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Name
-                </th>
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Website
-                </th>
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Address
-                </th>
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Type
-                </th>
-                <th className="p-2 border border-slate-600 ">Public/Private</th>
-
-                <th className="p-2 border border-slate-600"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((d, i) => (
-                <tr key={i}>
-                  <td className="p-2">{d.school_name}</td>
-                  <td className="p-2">{d.school_website}</td>
-                  <td className="p-2">{d.school_location}</td>
-                  <td className="p-2">{d.school_type}</td>
-                  <td className="p-2">{d.public_private}</td>
-
-                  <td className="p-2">
-                    <button className="w-8">
-                      <img src={deleteIcon} alt="" />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
+        <h1 className="text-3xl">DELETE PAGE</h1>
+        <p>DELETE </p>
         {/* PROGRAM OFFERED */}
         <div className="flex justify-center mt-12">
           <table className="table-auto border border-collapse w-[1400px]">
