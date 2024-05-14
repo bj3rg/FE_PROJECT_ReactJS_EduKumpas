@@ -5,13 +5,15 @@ const School_List_Elementary = () => {
   const schoolType = "Elementary";
   return (
     <div className="flex flex-col justify-center items-center mb-20 mt-5">
-      <div className="flex flex-col w-[50%] text-center gap-3">
+      <div className="flex flex-col w-[80%] md:w-[50%] text-center gap-3">
         <h1 className="text-2xl">{schoolType} in Batangas</h1>
         <p className="text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quod
-          reprehenderit perspiciatis qui nobis ut laudantium excepturi, numquam
-          error, iure aspernatur deserunt unde. Fuga nulla nostrum, ad harum
-          perspiciatis inventore?
+          Discover top elementary schools in Batangas Province on EduKumpas.
+          Find schools that prioritize holistic development and academic
+          excellence. Explore detailed profiles showcasing curriculum,
+          extracurricular activities, and facilities. Start your search for the
+          perfect elementary school that nurtures your child's potential and
+          growth.
         </p>
       </div>
       <div className="mt-20 w-[80%]">

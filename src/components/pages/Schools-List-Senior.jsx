@@ -5,13 +5,13 @@ const School_List_Senior = () => {
   const schoolType = "Senior High School";
   return (
     <div className="flex flex-col justify-center items-center mb-20 mt-5">
-      <div className="flex flex-col w-[50%] text-center gap-3">
+      <div className="flex flex-col w-[80%] md:w-[50%] text-center gap-3">
         <h1 className="text-2xl">{schoolType} in Batangas</h1>
         <p className="text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quod
-          reprehenderit perspiciatis qui nobis ut laudantium excepturi, numquam
-          error, iure aspernatur deserunt unde. Fuga nulla nostrum, ad harum
-          perspiciatis inventore?
+          Find the perfect senior high school for you in Batangas Province.
+          Discover schools offering various strands and programs. Get detailed
+          information on facilities, faculty, and extracurricular activities.
+          Start your senior high school journey with EduKumpas today.
         </p>
       </div>
       <div className="mt-20 w-[80%]">

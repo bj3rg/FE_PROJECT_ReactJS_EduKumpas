@@ -115,13 +115,15 @@ export const Search = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex flex-col w-[60%] lg:w-[30%] mt-10 mb-10">
-        <h1 className="text-center text-3xl">SEARCH YOUR DREAM SCHOOL</h1>
-        <p className="text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed modi
-          magni quos itaque? Recusandae, dignissimos iure! Iste maxime, omnis
-          soluta officia pariatur dolorem adipisci, optio corporis, obcaecati
-          temporibus velit neque?
+      <div className="flex flex-col w-[80%] md:w-[60%] lg:w-[35%] mt-5 mb-10">
+        <h1 className="text-center text-3xl text-blue-800 font-semibold">
+          SEARCH YOUR DREAM SCHOOL
+        </h1>
+        <p className="text-justify mt-5">
+          Discover the perfect school with our intuitive search feature,
+          offering detailed insights into programs. Tailor your search with
+          filters for location, tuition, and student life to find the best fit
+          for your academic journey.
         </p>
       </div>
 

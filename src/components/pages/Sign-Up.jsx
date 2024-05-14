@@ -51,17 +51,17 @@ export const Sign_Up = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-200">
+    <div className="flex items-center justify-center h-screen bg-gray-200 mt-28 sm:mt-[0%]">
       <div className="w-full md:w-3/5 items-center flex flex-col xl:flex-row justify-center gap-10 bg-white p-8 rounded-lg">
         <div className="flex flex-col  w-80">
           <NavLink to="/home">
             <img src={imgTest} alt="" />
           </NavLink>
           <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            debitis rerum saepe cupiditate, voluptatem distinctio aliquam
-            inventore adipisci quam quod eius maiores ab voluptas, numquam
-            suscipit alias dolores dolor modi.{" "}
+            Join EduKumpas to showcase your school and connect with students
+            looking for their dream educational institution. Be part of a
+            platform that simplifies the school search process for students and
+            parents. Sign up now to get started!{" "}
             <NavLink to="/home">
               <span className="underline text-sm">
                 Click here to visit page

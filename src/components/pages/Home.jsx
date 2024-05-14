@@ -11,16 +11,17 @@ export const Home = () => {
       <div className="flex flex-col w-[80%] lg:w-[80%] lg:flex-row justify-center">
         <div className="">
           <div className="mt-10">
-            <h1 className="text-5xl sm:text-7xl text-center lg:text-start">
+            <h1 className="text-5xl sm:text-7xl text-center lg:text-start text-blue-800">
               Your next
             </h1>
-            <h1 className="text-5xl sm:text-7xl text-center">Navi-Gateway</h1>
+            <h1 className="text-5xl sm:text-7xl text-center text-blue-800">
+              Navi-Gateway
+            </h1>
           </div>
           <p className="mt-5 mb-5 text-justify ml-5 mr-5 lg:ml-0 lg:mr-0">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. At qui
-            itaque ipsa illo laboriosam, fuga et, necessitatibus assumenda optio
-            voluptatibus alias non asperiores. Corporis similique delectus
-            magni, eos accusantium voluptatum!
+            Discover your ideal school with EduKumpas, the ultimate platform for
+            students and parents. Find detailed information, compare schools,
+            and simplify your school search, all in one place!
           </p>
           <div className="flex flex-col justify-center items-center md:flex-row  gap-5 md:gap-10">
             <NavLink to="/search">
