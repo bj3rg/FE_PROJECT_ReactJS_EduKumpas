@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <header className="bg-white flex justify-between items-center w-[92%] mx-auto">
       <NavLink to="/home">
-        <img src={logo} alt="edukumpas-logo" className="w-32 md:w-52" />
+        <img src={logo} alt="edukumpas-logo" className="w-32 md:w-40" />
       </NavLink>
 
       <nav
@@ -23,30 +23,30 @@ function Navbar() {
       >
         <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 py-4 text-xl">
           <li>
-            <NavLink to="/home" className="hover:text-gray-500">
+            <NavLink to="/home" className="hover:text-gray-500 p-4">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about-us" className="hover:text-gray-500">
-              About Us
+            <NavLink to="/about-us" className="hover:text-gray-500 p-4">
+              About
             </NavLink>
           </li>
           <li>
-            <NavLink to="/search" className="hover:text-gray-500">
+            <NavLink to="/schools" className="hover:text-gray-500 p-4">
+              School
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/search" className="hover:text-gray-500 p-4">
               Search
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/schools" className="hover:text-gray-500">
-              Schools
             </NavLink>
           </li>
         </ul>
       </nav>
       <div className="flex items-center gap-6 py-2">
         <NavLink to="/sign-up">
-          <button className="bg-[#87ac] text-white px-5 py-2 rounded-full hover:bg-[#F22222]">
+          <button className="bg-[#3c3c3e] text-white px-5 py-2 rounded-full  hover:bg-[#f4b43f]">
             Add School
           </button>
         </NavLink>

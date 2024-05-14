@@ -56,7 +56,7 @@ export const AddProgram = ({ school_id, school_name }) => {
     }
   };
   return (
-    <div className=" w-full lg:w-[750px] bg-orange-400 px-[30px] py-[30px]  rounded-[15px] z-[99]">
+    <div className=" w-full lg:w-[750px] bg-gray-400 px-[30px] py-[30px]  rounded-[15px] z-[99]">
       <div className="text-white mb-[10px] flex flex-col gap-[3px]">
         <h1 className="font-bold border-b-2 border-solid border-white text-[16px]">
           Add Programs Offer

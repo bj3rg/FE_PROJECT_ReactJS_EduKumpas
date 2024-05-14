@@ -25,7 +25,7 @@ export const NewsCard = ({ schoolID }) => {
   return (
     <div className=" mb-10 ">
       {schoolsData.map((value, index) => (
-        <div className="flex flex-col gap-10 items-center">
+        <div className="flex flex-col gap-10 items-center mb-10">
           <div
             key={index}
             className="flex items-center flex-col border border-2 border-black rounded-xl p-5 gap-3 w-[100%] sm:w-[70%]"

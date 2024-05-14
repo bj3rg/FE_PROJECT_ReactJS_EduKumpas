@@ -15,18 +15,7 @@ function Footer() {
       </div>
       <nav>
         <ul className="flex md:flex-row flex-col md:items-center justify-between py-8 gap-8 text-xl">
-          <li>
-            <NavLink to="">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="">About Us</NavLink>
-          </li>
-          <li>
-            <NavLink to="">Get A Quote</NavLink>
-          </li>
-          <li>
-            <NavLink to="">FAQ</NavLink>
-          </li>
+          <h1>Copyright. © 2024</h1>
         </ul>
       </nav>
       <ul className="flex flex-row py-4 gap-6">

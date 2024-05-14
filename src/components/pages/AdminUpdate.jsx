@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import deleteIcon from "../../assets/delete.png";
 import editIcon from "../../assets/edit.png";
 import Admin_Navbar from "../mini-components/AdminNavbar";
 import UpdateAdmissionModal from "../mini-components/UpdateAdmission";
@@ -11,14 +10,12 @@ import UpdateFacilityModal from "../mini-components/UpdateFacility";
 import UpdateClubModal from "../mini-components/UpdateClubs";
 import UpdateNewsModal from "../mini-components/UpdateNews";
 export const Admin = () => {
-  const [data, setData] = useState([]);
   const [exp, setExp] = useState([]);
   const [offer, setOffer] = useState([]);
   const [facility, setFacility] = useState([]);
   const [activity, setActivity] = useState([]);
   const [news, setNews] = useState([]);
   const [club, setClub] = useState([]);
-  const [feature, setFeature] = useState([]);
   const [schoolId, setSchoolId] = useState("");
   const [schoolName, setSchoolName] = useState("");
   const navigate = useNavigate();
@@ -45,6 +42,7 @@ export const Admin = () => {
     setShowFacilityModal(false);
     setShowNewsModal(false);
     setShowOfferedModal(false);
+    setShowSchoolModal(false);
     window.location.reload();
   };
   const handleEditAdm = async (id) => {
@@ -77,7 +75,6 @@ export const Admin = () => {
       navigate("/login");
       return;
     }
-    // SCHOOL
 
     axios
       .get(`https://bjerg.pythonanywhere.com/api/admin/schools/${email}`, {
@@ -86,12 +83,12 @@ export const Admin = () => {
         },
       })
       .then((res) => {
+        console.log(res.data[0]);
         const schoolData = res.data[0];
         const school_id = schoolData.id;
         const school_name = schoolData.school_name;
         setSchoolName(school_name);
         setSchoolId(school_id);
-        setData(res.data);
       });
     // Admission GET
     axios
@@ -181,50 +178,6 @@ export const Admin = () => {
         school_name={schoolName}
       />
       <div className="flex flex-col justify-center items-center">
-        <div className="flex justify-center mt-12">
-          <table className="table-auto border w-[1400px]">
-            <thead>
-              <tr className="header-row text-left">
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Name
-                </th>
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Website
-                </th>
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Address
-                </th>
-                <th className="p-2 border border-slate-600 w-1/4">
-                  School Type
-                </th>
-                <th className="p-2 border border-slate-600 ">Public/Private</th>
-
-                <th className="p-2 border border-slate-600"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((d, i) => (
-                <tr key={i}>
-                  <td className="p-2">{d.school_name}</td>
-                  <td className="p-2">{d.school_website}</td>
-                  <td className="p-2">{d.school_location}</td>
-                  <td className="p-2">{d.school_type}</td>
-                  <td className="p-2">{d.public_private}</td>
-
-                  <td className="p-2">
-                    {/* <button
-                      onClick={() => handleEditOffered(d.id)}
-                      className="w-8"
-                    >
-                      <img src={editIcon} alt="" />
-                    </button> */}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
         {/* PROGRAM OFFERED */}
         <div className="flex justify-center mt-12">
           <table className="table-auto border border-collapse w-[1400px]">
