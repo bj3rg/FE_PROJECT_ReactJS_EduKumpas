@@ -7,6 +7,9 @@ export const Sign_Up = () => {
   const navigate = useNavigate();
   const [option, selectedOption] = useState("");
   const [correct, setCorrect] = useState(false);
+  const [emailErr, setEmailErr] = useState("");
+  const [schoolErr, setSchoolErr] = useState("");
+  const [incompleteErr, setIncompleteErr] = useState("");
   const [newAccount, setNewAccount] = useState({
     username: "",
     first_name: "",
@@ -38,7 +41,7 @@ export const Sign_Up = () => {
         "https://bjerg.pythonanywhere.com/api/representative",
         formData
       );
-      console.log(response.data);
+      alert(response.data);
       if (response.data !== "Email already registered") {
         setCorrect(false);
         console.log("Successfully added", response.data);
@@ -47,6 +50,22 @@ export const Sign_Up = () => {
         setCorrect(true);
       }
     } catch (error) {
+      alert(error.response.status);
+      if (error.response.status === 409) {
+        setEmailErr("Email Already Exist");
+        setIncompleteErr("");
+        setCorrect(true);
+      } else if (error.response.status === 406) {
+        setSchoolErr("School Already Registered");
+        setIncompleteErr("");
+        setEmailErr("");
+        setCorrect(true);
+      } else {
+        setIncompleteErr("Incomplete Fields");
+        setSchoolErr("");
+        setEmailErr("");
+        setCorrect(true);
+      }
       console.log(error);
     }
   };
@@ -72,11 +91,6 @@ export const Sign_Up = () => {
         <div className="flex  justify-center flex-col rounded-md p-2 gap-2">
           <form action="" className="flex flex-col items-end border gap-2 p-8">
             <div className="flex items-center gap-2">
-              {correct && (
-                <div className="bg-[#F5656561] text-sm border-[1px] border-[#FF000061] px-[20px] py-[5px] rounded-md">
-                  <h1>Incorrect username or password</h1>
-                </div>
-              )}
               <label htmlFor="userName">Username</label>
               <input
                 type="text"
@@ -194,6 +208,14 @@ export const Sign_Up = () => {
                 }
               />
             </div>
+            {correct && (
+              <div className="bg-[#F5656561] text-sm border-[1px] border-[#FF000061] px-[20px] py-[5px] rounded-md">
+                <h1>
+                  {incompleteErr}
+                  {emailErr} {schoolErr}
+                </h1>
+              </div>
+            )}
             <div className="text-center">
               <NavLink to="/login">
                 <button
