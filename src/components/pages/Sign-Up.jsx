@@ -41,7 +41,6 @@ export const Sign_Up = () => {
         "https://bjerg.pythonanywhere.com/api/representative",
         formData
       );
-      alert(response.data);
       if (response.data !== "Email already registered") {
         setCorrect(false);
         console.log("Successfully added", response.data);
@@ -50,10 +49,10 @@ export const Sign_Up = () => {
         setCorrect(true);
       }
     } catch (error) {
-      alert(error.response.status);
       if (error.response.status === 409) {
         setEmailErr("Email Already Exist");
         setIncompleteErr("");
+        setSchoolErr("");
         setCorrect(true);
       } else if (error.response.status === 406) {
         setSchoolErr("School Already Registered");

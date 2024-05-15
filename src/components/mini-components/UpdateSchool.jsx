@@ -41,7 +41,6 @@ export const UpdateSchool = ({ school_id, school_name, onClose }) => {
     if (!schoolImg) {
       alert("Image");
     }
-    alert(schoolImg);
 
     const formData = new FormData();
     formData.append("school_name", school_name);
