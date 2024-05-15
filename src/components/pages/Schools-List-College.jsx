@@ -7,7 +7,9 @@ const School_List_College = () => {
   return (
     <div className="flex flex-col justify-center items-center mb-20 mt-5">
       <div className="flex flex-col w-[80%] md:w-[50%] text-center gap-3">
-        <h1 className="text-2xl">{schoolType} in Batangas</h1>
+        <h1 className="text-center text-3xl text-blue-800 font-semibold">
+          {schoolType} in Batangas
+        </h1>
         <p className="text-justify">
           Discover the best colleges and universities in Batangas Province.
           Explore a wide range of educational institutions offering diverse

@@ -26,7 +26,7 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
           <li>
             <NavLink
               to={`/representative/school-profile/${email}/${school_id}`}
-              className="hover:text-gray-500"
+              className="hover:text-white hover:bg-blue-400 p-2"
             >
               School Profile
             </NavLink>
@@ -34,7 +34,7 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
           <li>
             <NavLink
               to={`/representative/add-data/${email}/${school_id}/${school_name}`}
-              className="hover:text-gray-500"
+              className="hover:text-white hover:bg-blue-400 p-2"
             >
               Add Data
             </NavLink>
@@ -42,7 +42,7 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
           <li>
             <NavLink
               to={`/representative/update-data/${email}/${school_id}`}
-              className="hover:text-gray-500"
+              className="hover:text-white hover:bg-blue-400 p-2"
             >
               Update Data
             </NavLink>
@@ -51,7 +51,7 @@ export const Admin_Navbar = ({ email, school_id, school_name }) => {
           <li>
             <NavLink
               to={`/representative/delete-data/${email}/${school_id}`}
-              className="hover:text-gray-500"
+              className="hover:text-white hover:bg-blue-400 p-2"
             >
               Delete Data
             </NavLink>

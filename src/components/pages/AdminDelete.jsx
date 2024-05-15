@@ -256,10 +256,10 @@ export const AdminDelete = () => {
         school_name={schoolName}
       />
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl">DELETE PAGE</h1>
-        <p>DELETE </p>
-        {/* PROGRAM OFFERED */}
-        <div className="flex justify-center mt-12">
+        <div className="text-center text-xl">
+          <h1>Delete Page </h1>
+        </div>
+        <div className="flex justify-center mt-10">
           <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">

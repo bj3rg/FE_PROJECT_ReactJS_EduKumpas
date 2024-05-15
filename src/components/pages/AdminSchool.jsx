@@ -56,6 +56,9 @@ export const AdminSchool = () => {
         school_name={schoolName}
       />
       <div className="flex flex-col justify-center items-center">
+        <div className="text-center text-xl">
+          <h1>School Profile Page </h1>
+        </div>
         <div className="flex justify-center mt-12">
           <table className="table-auto border w-[1400px]">
             <thead>

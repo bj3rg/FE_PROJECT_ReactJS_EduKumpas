@@ -90,7 +90,10 @@ export const UpdateSchool = ({ school_id, school_name, onClose }) => {
       <div className="flex flex-col gap-[10px]">
         {/* first row */}
         <div className="flex items-center gap-2">
-          <label htmlFor="type">Public Private</label>
+          <label htmlFor="type">
+            {" "}
+            <span className="text-white text-lg"> Public Private</span>
+          </label>
           <select
             id="type"
             className="form-control border-2 border rounded-md w-60 p-2"
@@ -127,7 +130,7 @@ export const UpdateSchool = ({ school_id, school_name, onClose }) => {
           />
         </div>
         {/* third row */}
-        <h1>Logo</h1>
+        <h1 className="text-lg text-white">Logo</h1>
         <div className="w-full flex justify-between mt-2">
           <input
             type="file"
@@ -136,7 +139,7 @@ export const UpdateSchool = ({ school_id, school_name, onClose }) => {
             onChange={handleFileChangeLogo}
           />
         </div>
-        <h1>School</h1>
+        <h1 className="text-lg text-white">School</h1>
         <div className="w-full flex justify-between mt-2">
           <input
             title="MIMA"
@@ -161,7 +164,7 @@ export const UpdateSchool = ({ school_id, school_name, onClose }) => {
             onClick={handleUpdate}
             className="p-[5px] bg-white rounded-[10px] text-black min-w-[70px] cursor-pointer"
           >
-            Add
+            Update
           </button>
           <button
             onClick={onClose}

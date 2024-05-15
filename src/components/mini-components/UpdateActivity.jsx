@@ -76,10 +76,10 @@ function UpdateActivity({ school_id, school_name, activity, onClose }) {
   };
 
   return (
-    <div className="w-full lg:w-[750px] bg-orange-400 mt-500 px-[30px] py-[30px] rounded-[15px] z-[99]">
+    <div className="w-full lg:w-[750px] bg-gray-400 mt-500 px-[30px] py-[30px] rounded-[15px] z-[99]">
       <div className="text-white mb-[10px] flex flex-col gap-[3px]">
         <h1 className="font-bold border-b-2 border-solid border-white text-[16px]">
-          Add activity
+          Update activity
         </h1>
       </div>
       <div className="flex flex-col gap-[10px] ">
@@ -156,7 +156,7 @@ function UpdateActivity({ school_id, school_name, activity, onClose }) {
             className="p-[5px] bg-white rounded-[10px] text-black min-w-[70px] cursor-pointer"
             onClick={handleUpdate}
           >
-            Add
+            Update
           </button>
           <button
             onClick={onClose}

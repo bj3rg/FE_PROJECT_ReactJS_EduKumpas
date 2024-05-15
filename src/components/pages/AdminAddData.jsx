@@ -21,8 +21,8 @@ export const AddDataAdmin = () => {
           school_name={school_name}
         />
       </div>
-      <div className="text-center m-10 text-xl">
-        <h1>Add the information of {school_name} here </h1>
+      <div className="text-center mb-10 text-xl">
+        <h1>Add Page </h1>
       </div>
       <div className="flex flex-col items-center gap-10">
         <AddProgram

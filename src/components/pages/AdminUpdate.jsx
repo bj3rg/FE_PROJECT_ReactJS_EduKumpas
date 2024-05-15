@@ -178,8 +178,10 @@ export const Admin = () => {
         school_name={schoolName}
       />
       <div className="flex flex-col justify-center items-center">
-        {/* PROGRAM OFFERED */}
-        <div className="flex justify-center mt-12">
+        <div className="text-center text-xl">
+          <h1>Update Page </h1>
+        </div>
+        <div className="flex justify-center mt-10">
           <table className="table-auto border border-collapse w-[1400px]">
             <thead>
               <tr className="header-row text-left">
@@ -224,7 +226,6 @@ export const Admin = () => {
             program={offer.find((off) => off.id === selectedOfferedId)}
           />
         )}
-
         {/* EXPENSES */}
         <div className="flex justify-center mt-12">
           <table className="table-auto border border-collapse w-[1400px]">
@@ -265,7 +266,6 @@ export const Admin = () => {
             admission={exp.find((adm) => adm.id === selectedAdmissionId)}
           />
         )}
-
         {/* FACILITIES */}
         <div className="flex justify-center  mt-12">
           <table className="table-auto border border-collapse w-[1400px]">
