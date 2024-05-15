@@ -9,7 +9,7 @@ function SchoolsListCard({ school_type }) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://bjerg.pythonanywhere.com/api/schools",
+          "https://bjerg.pythonanywhere.com/api/schools-search",
           {
             params: { school_type: school_type },
           }
@@ -41,12 +41,16 @@ function SchoolsListCard({ school_type }) {
               {/* <p>{school.school_logo}</p> */}
               <img
                 className="w-24 h-24"
-                src={`https://bjerg.pythonanywhere.com/media/${school.school_logo}`}
+                src={`https://bjerg.pythonanywhere.com/${school.school_logo}`}
                 alt="Image"
               />
 
               <NavLink
-                to={`/schools/${school.school_name}/${school.id}/${school.school_location}/${school.public_private}`}
+                to={`/schools/${school.school_name}/${school.id}/${
+                  school.school_location
+                }/${school.public_private}/${encodeURIComponent(
+                  school.school_image
+                )}`}
               >
                 <button className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 font-medium rounded-full text-lg px-12 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 me-2 mb-2">
                   Browse
@@ -61,3 +65,5 @@ function SchoolsListCard({ school_type }) {
 }
 
 export { SchoolsListCard };
+// /Public/%2Fmedia%2Fimages%2Fhomepage-webslider-1.jpg
+// Public/media/%2Fmedia%2Fimages%2Fhomepage-webslider-1.jpg

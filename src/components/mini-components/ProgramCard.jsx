@@ -8,7 +8,7 @@ export const ProgramCard = ({
   tuition_end,
   public_private,
   school_location,
-  // school_image,
+  school_image,
   id,
   index,
 }) => {
@@ -20,8 +20,10 @@ export const ProgramCard = ({
       >
         <div className="flex flex-col w-[100%]">
           <h1 className="font-bold text-xl">{program_name}</h1>
-          <h1 className="font-bold text-md">{school_name}</h1>
-          <h5 className="text-sm ">{program_description}</h5>
+          <h1 className="font-bold text-md italic">{school_name}</h1>
+          <h5 className="text-sm ">
+            Course Description: {program_description}
+          </h5>
           <h5 className="text-sm">
             Tuition per year:{" "}
             <span className="text-red-600">
@@ -32,7 +34,9 @@ export const ProgramCard = ({
         </div>
         <div className="flex flex-col justify-center items-center gap-5 m-2">
           <NavLink
-            to={`/schools/${school_name}/${id}/${school_location}/${public_private}`}
+            to={`/schools/${school_name}/${id}/${school_location}/${public_private}/${encodeURIComponent(
+              school_image
+            )}`}
           >
             <button className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 font-medium rounded-full text-lg px-8 py-2 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 me-2 mb-2">
               Browse

@@ -7,6 +7,7 @@ export const SchoolCard = ({
   public_private,
   school_type,
   school_logo,
+  school_image,
   id,
 }) => {
   return (
@@ -32,7 +33,9 @@ export const SchoolCard = ({
           />
 
           <NavLink
-            to={`/schools/${school_name}/${id}/${school_location}/${public_private}`}
+            to={`/schools/${school_name}/${id}/${school_location}/${public_private}/${encodeURIComponent(
+              school_image
+            )}`}
           >
             <button className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 font-medium rounded-full text-lg px-12 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 me-2 mb-2">
               Browse

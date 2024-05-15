@@ -13,6 +13,8 @@ import { useState, useEffect } from "react";
 export const Main_School = () => {
   const { schoolName, id, school_location, public_private, school_image } =
     useParams();
+
+  const decodedSchoolImage = decodeURIComponent(school_image);
   const [activeTab, setActiveTab] = useState("programs"); // Initial active tab
 
   useEffect(() => {
@@ -30,7 +32,9 @@ export const Main_School = () => {
     history.pushState(
       {},
       "",
-      `/schools/${schoolName}/${id}/${school_location}/${public_private}`
+      `/schools/${schoolName}/${id}/${school_location}/${public_private}/${encodeURIComponent(
+        school_image
+      )}`
     ); // Update URL with active tab
   };
 
@@ -63,7 +67,11 @@ export const Main_School = () => {
           <h5 className="text-xl">{public_private} School</h5>
         </div>
         <div className="flex items-center">
-          <img className="w-80 " src={school_image} alt="" />
+          <img
+            className="w-80 "
+            src={`https://bjerg.pythonanywhere.com${decodedSchoolImage}`}
+            alt=""
+          />
         </div>
       </div>
       <div className="w-[80%] flex flex-col gap-10 mb-10">
