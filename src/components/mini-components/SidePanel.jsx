@@ -38,16 +38,7 @@ export const SidePanel = () => {
           <option value="Public">Public</option>
         </select>
       </div>
-      {/* <div className="flex flex-col items-center  mt-5">
-        <label htmlFor="type" className="self-start">
-          Search
-        </label>
-        <input
-          type="text"
-          name="type"
-          className="w-[100%] px-2 h-8 border-solid border border-gray-500 rounded-md"
-        />
-      </div> */}
+
       <div className=" w-[30%] h-[10%] self-center">
         <button className="hover:bg-orange-400 w-[100%] p-2 border border-solid border-black-500 bg-orange-500 rounded-md">
           Search

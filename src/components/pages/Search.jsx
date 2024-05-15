@@ -119,7 +119,7 @@ export const Search = () => {
         <h1 className="text-center text-3xl text-blue-800 font-semibold">
           SEARCH YOUR DREAM SCHOOL
         </h1>
-        <p className="text-justify mt-5">
+        <p className="text-justify mt-5 leading-7">
           Discover the perfect school with our intuitive search feature,
           offering detailed insights into programs. Tailor your search with
           filters for location, tuition, and student life to find the best fit
@@ -193,23 +193,32 @@ export const Search = () => {
               school_name={schoolItem.school_name}
               school_logo={schoolItem.school_logo}
               school_type={schoolItem.school_type}
+              school_image={schoolItem.school_image}
             />
           ))}
         </div>
       )}
       {showProgram && (
         <div className="flex flex-row justify-between items-center gap-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[80%] mt-10">
-          {program.map((programItem, i) => (
-            <ProgramCard
-              key={i}
-              id={programItem.school}
-              school_name={programItem.school_name}
-              program_name={programItem.program_name}
-              program_description={programItem.program_description}
-              tuition_start={programItem.tuition_fee_start_range}
-              tuition_end={programItem.tuition_fee_end_range}
-            />
-          ))}
+          {program.map((programItem, i) => {
+            const schoolItem = backUpSchool.find(
+              (school) => school.school_name === programItem.school_name
+            );
+            return (
+              <ProgramCard
+                key={i}
+                id={programItem.school}
+                school_name={programItem.school_name}
+                program_name={programItem.program_name}
+                program_description={programItem.program_description}
+                tuition_start={programItem.tuition_fee_start_range}
+                tuition_end={programItem.tuition_fee_end_range}
+                public_private={schoolItem ? schoolItem.public_private : ""}
+                school_location={schoolItem ? schoolItem.school_location : ""}
+                school_image={schoolItem ? schoolItem.school_image : ""}
+              />
+            );
+          })}
         </div>
       )}
     </div>

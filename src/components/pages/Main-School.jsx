@@ -11,7 +11,8 @@ import { SchoolDetailBar } from "../mini-components/SchoolDetailBar";
 import { useState, useEffect } from "react";
 
 export const Main_School = () => {
-  const { schoolName, id } = useParams();
+  const { schoolName, id, school_location, public_private, school_image } =
+    useParams();
   const [activeTab, setActiveTab] = useState("programs"); // Initial active tab
 
   useEffect(() => {
@@ -26,7 +27,11 @@ export const Main_School = () => {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    history.pushState({}, "", `/schools/${schoolName}/${id}`); // Update URL with active tab
+    history.pushState(
+      {},
+      "",
+      `/schools/${schoolName}/${id}/${school_location}/${public_private}`
+    ); // Update URL with active tab
   };
 
   const renderActiveComponent = () => {
@@ -51,10 +56,15 @@ export const Main_School = () => {
   };
   return (
     <div className="flex flex-col items-center mt-10">
-      <div className="flex flex-col w-[80%] gap-2 mb-2">
-        <h1 className="text-4xl">{schoolName}</h1>
-        <h5 className="text-xl">Golden Country Homes, Alangilan, Batangas</h5>
-        <h5 className="text-xl">Public School</h5>
+      <div className="flex flex-col md:flex-row justify-between w-[80%] mb-4">
+        <div className="flex flex-col gap-2 w-[100%] md:w-[60%] justify-center">
+          <h1 className="text-4xl break-words">{schoolName}</h1>
+          <h5 className="text-xl break-words">{school_location}</h5>
+          <h5 className="text-xl">{public_private} School</h5>
+        </div>
+        <div className="flex items-center">
+          <img className="w-80 " src={school_image} alt="" />
+        </div>
       </div>
       <div className="w-[80%] flex flex-col gap-10 mb-10">
         <SchoolDetailBar onTabClick={handleTabClick} activeTab={activeTab} />

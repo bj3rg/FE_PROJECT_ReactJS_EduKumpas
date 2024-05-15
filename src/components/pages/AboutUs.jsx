@@ -1,6 +1,7 @@
 import React from "react";
 import imageTest from "../../assets/test.jpg";
-import style from "../css/AboutUs.module.css";
+import vision from "../../assets/vision.png";
+import mission from "../../assets/mission.png";
 import angelo from "../../assets/image.jpg";
 import juvy from "../../assets/juvy.jpg";
 import renz from "../../assets/renz.jpg";
@@ -16,7 +17,7 @@ export const AboutUs = () => {
           <h1 className="text-center text-4xl text-blue-800 font-semibold">
             Our Mission
           </h1>
-          <p className="p-5">
+          <p className="p-5 leading-7">
             Our mission at EduKumpas is to empower students by providing
             transparent, accessible, and detailed information about educational
             institutions. We aim to facilitate seamless communication between
@@ -25,23 +26,23 @@ export const AboutUs = () => {
           </p>
         </div>
         <img
-          src={imageTest}
+          src={mission}
           alt=""
           className="object-scale-down h-[50%] w-[50%] rounded-md"
         />
       </div>
 
-      <div className="flex flex-col md:flex-row md:justify-center text-justify items-center max-w-screen-lg w-[100%] md:w-[80%] xl:w-[60%] mt-10">
+      <div className="flex flex-col md:flex-row md:justify-center text-justify items-center  max-w-screen-lg w-[100%] md:w-[80%] xl:w-[60%] mt-14">
         <img
-          src={imageTest}
+          src={vision}
           alt=""
           className="object-scale-down h-[50%] w-[50%] rounded-md"
         />
         <div className="w-[92%]">
-          <h1 className="text-center mt-5 md:mt-14 text-4xl text-blue-800 font-semibold">
+          <h1 className="text-center mt-5 md:mt-0 text-4xl text-blue-800 font-semibold">
             Our Vision
           </h1>
-          <p className="p-5">
+          <p className="p-5 leading-7">
             EduKumpas is committed to simplifying the school search process by
             providing a comprehensive platform that connects students with
             educational institutions. Our mission is to alleviate the common
@@ -55,7 +56,7 @@ export const AboutUs = () => {
       <div className=" w-[80%] sm:w-[50%] lg:w-[25%] mt-20">
         <div className="text-center ">
           <h1 className="text-4xl text-blue-800 font-semibold">Our Team</h1>
-          <p className="text-justify mt-5">
+          <p className="text-justify mt-5 leading-7">
             Meet our dedicated team at EduKumpas, committed to simplifying the
             school search process. Together, we aim to empower students and
             parents by providing comprehensive and accessible educational
@@ -107,7 +108,7 @@ export const AboutUs = () => {
       <div className="flex flex-col md:flex-col w-[80%] m-20 sm:w-[50%] lg:w-[25%] items-center ">
         <div className=" flex flex-col text-center items-center">
           <h1 className="text-4xl text-blue-800 font-semibold">Get in Touch</h1>
-          <p className="text-justify mt-5">
+          <p className="text-justify mt-5 leading-7">
             Contact EduKumpas for inquiries, partnerships, or support. Our
             dedicated team is prepared to assist you in finding educational
             solutions and enhancing your educational experience.

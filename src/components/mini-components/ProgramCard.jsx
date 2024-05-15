@@ -6,6 +6,9 @@ export const ProgramCard = ({
   program_description,
   tuition_start,
   tuition_end,
+  public_private,
+  school_location,
+  // school_image,
   id,
   index,
 }) => {
@@ -28,7 +31,9 @@ export const ProgramCard = ({
           </h5>
         </div>
         <div className="flex flex-col justify-center items-center gap-5 m-2">
-          <NavLink to={`/schools/${school_name}/${id}`}>
+          <NavLink
+            to={`/schools/${school_name}/${id}/${school_location}/${public_private}`}
+          >
             <button className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 font-medium rounded-full text-lg px-8 py-2 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 me-2 mb-2">
               Browse
             </button>

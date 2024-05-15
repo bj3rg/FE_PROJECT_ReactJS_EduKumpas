@@ -45,7 +45,9 @@ function SchoolsListCard({ school_type }) {
                 alt="Image"
               />
 
-              <NavLink to={`/schools/${school.school_name}/${school.id}`}>
+              <NavLink
+                to={`/schools/${school.school_name}/${school.id}/${school.school_location}/${school.public_private}`}
+              >
                 <button className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 font-medium rounded-full text-lg px-12 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 me-2 mb-2">
                   Browse
                 </button>

@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 export const SchoolDetailBar = ({ onTabClick, activeTab }) => {
   const tabs = [

@@ -9,7 +9,7 @@ const School_List_Senior = () => {
         <h1 className="text-center text-3xl text-blue-800 font-semibold">
           {schoolType} in Batangas
         </h1>
-        <p className="text-justify">
+        <p className="text-justify leading-7">
           Find the perfect senior high school for you in Batangas Province.
           Discover schools offering various strands and programs. Get detailed
           information on facilities, faculty, and extracurricular activities.

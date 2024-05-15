@@ -9,7 +9,7 @@ const School_List_Junior = () => {
         <h1 className="text-center text-3xl text-blue-800 font-semibold">
           {schoolType} in Batangas
         </h1>
-        <p className="text-justify">
+        <p className="text-justify leading-7">
           Explore the best junior high schools in Batangas Province. Find
           schools that provide quality education and a supportive environment
           for your child's growth. Discover detailed information on curriculum,

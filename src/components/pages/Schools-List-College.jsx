@@ -10,7 +10,7 @@ const School_List_College = () => {
         <h1 className="text-center text-3xl text-blue-800 font-semibold">
           {schoolType} in Batangas
         </h1>
-        <p className="text-justify">
+        <p className="text-justify leading-7">
           Discover the best colleges and universities in Batangas Province.
           Explore a wide range of educational institutions offering diverse
           courses and programs. Find detailed information on admission

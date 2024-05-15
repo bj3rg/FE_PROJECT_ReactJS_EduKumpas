@@ -57,7 +57,7 @@ export const Sign_Up = () => {
           <NavLink to="/home">
             <img src={imgTest} alt="" />
           </NavLink>
-          <h1>
+          <h1 className="leading-7">
             Join EduKumpas to showcase your school and connect with students
             looking for their dream educational institution. Be part of a
             platform that simplifies the school search process for students and

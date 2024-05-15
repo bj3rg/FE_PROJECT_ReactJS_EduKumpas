@@ -9,7 +9,7 @@ const School_List_Preschool = () => {
         <h1 className="text-center text-3xl text-blue-800 font-semibold">
           {schoolType} in Batangas
         </h1>
-        <p className="text-justify">
+        <p className="text-justify leading-7">
           Explore leading preschools in Batangas Province on EduKumpas. Discover
           schools dedicated to providing a nurturing and stimulating environment
           for your child's early education. View detailed profiles highlighting

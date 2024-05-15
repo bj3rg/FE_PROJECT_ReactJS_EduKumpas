@@ -65,11 +65,11 @@ export const Login = () => {
           <NavLink to="/home">
             <img src={imgTest} alt="" />
           </NavLink>
-          <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            debitis rerum saepe cupiditate, voluptatem distinctio aliquam
-            inventore adipisci quam quod eius maiores ab voluptas, numquam
-            suscipit alias dolores dolor modi.{" "}
+          <h1 className="leading-7">
+            Welcome back to EduKumpas! Log in to your account to explore a world
+            of educational opportunities. Stay connected with the latest updates
+            and discover the perfect educational path for you. Join EduKumpas
+            today!{" "}
             <NavLink to="/home">
               <span className="underline text-sm">
                 Click here to visit page
@@ -84,7 +84,7 @@ export const Login = () => {
 
               <input
                 type="text"
-                placeholder="Enter email:"
+                placeholder="Enter email or username:"
                 className="form-control border-2 border rounded-md w-60 p-2"
                 onChange={handleUser}
               />

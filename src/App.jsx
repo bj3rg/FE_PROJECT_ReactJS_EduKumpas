@@ -115,7 +115,7 @@ function App() {
           }
         />
         <Route
-          path="/schools/:schoolName/:id"
+          path="/schools/:schoolName/:id/:school_location/:public_private"
           element={
             <>
               <Navbar />

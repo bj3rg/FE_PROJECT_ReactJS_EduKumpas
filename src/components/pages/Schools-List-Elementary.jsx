@@ -9,7 +9,7 @@ const School_List_Elementary = () => {
         <h1 className="text-center text-3xl text-blue-800 font-semibold">
           {schoolType} in Batangas
         </h1>
-        <p className="text-justify">
+        <p className="text-justify leading-7">
           Discover top elementary schools in Batangas Province on EduKumpas.
           Find schools that prioritize holistic development and academic
           excellence. Explore detailed profiles showcasing curriculum,
