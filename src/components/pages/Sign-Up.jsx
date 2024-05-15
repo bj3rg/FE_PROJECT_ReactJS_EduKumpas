@@ -62,8 +62,8 @@ export const Sign_Up = () => {
         setEmailFormatErr("");
         setEmailErr("");
         setCorrect(true);
-      } else if (error.response.status === 406) {
-        setEmailFormatErr("Invalid Email of Phone Number");
+      } else if (error.response.status === 401) {
+        setEmailFormatErr("Invalid Email of Contact Number");
         setIncompleteErr("");
         setEmailErr("");
         setSchoolErr("");
@@ -162,7 +162,7 @@ export const Sign_Up = () => {
               <label htmlFor="email">Contact No.</label>
               <input
                 type="text"
-                placeholder="Enter contact number:"
+                placeholder="Enter 11-digit contact no:"
                 className="form-control border-2 border rounded-md w-60 p-2"
                 onChange={(e) =>
                   setNewAccount((prev) => ({
