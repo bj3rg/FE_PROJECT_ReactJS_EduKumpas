@@ -21,7 +21,7 @@ export const ProgramCard = ({
         <div className="flex flex-col w-[100%]">
           <h1 className="font-bold text-xl">{program_name}</h1>
           <h1 className="font-bold text-md italic">{school_name}</h1>
-          <h5 className="text-sm ">
+          <h5 className="text-sm text-justify">
             Course Description: {program_description}
           </h5>
           <h5 className="text-sm">

@@ -8,6 +8,7 @@ export const Sign_Up = () => {
   const [option, selectedOption] = useState("");
   const [correct, setCorrect] = useState(false);
   const [emailErr, setEmailErr] = useState("");
+  const [emailFormatErr, setEmailFormatErr] = useState("");
   const [schoolErr, setSchoolErr] = useState("");
   const [incompleteErr, setIncompleteErr] = useState("");
   const [newAccount, setNewAccount] = useState({
@@ -51,17 +52,25 @@ export const Sign_Up = () => {
     } catch (error) {
       if (error.response.status === 409) {
         setEmailErr("Email Already Exist");
+        setEmailFormatErr("");
         setIncompleteErr("");
         setSchoolErr("");
         setCorrect(true);
       } else if (error.response.status === 406) {
         setSchoolErr("School Already Registered");
         setIncompleteErr("");
+        setEmailFormatErr("");
         setEmailErr("");
         setCorrect(true);
+      } else if (error.response.status === 406) {
+        setEmailFormatErr("Invalid Email of Phone Number");
+        setIncompleteErr("");
+        setEmailErr("");
+        setSchoolErr("");
       } else {
         setIncompleteErr("Incomplete Fields");
         setSchoolErr("");
+        setEmailFormatErr("");
         setEmailErr("");
         setCorrect(true);
       }
@@ -138,6 +147,7 @@ export const Sign_Up = () => {
               <label htmlFor="email">Email</label>
               <input
                 type="email"
+                id="email"
                 placeholder="Enter email:"
                 className="form-control border-2 border rounded-md w-60 p-2"
                 onChange={(e) =>
@@ -211,7 +221,9 @@ export const Sign_Up = () => {
               <div className="bg-[#F5656561] text-sm border-[1px] border-[#FF000061] px-[20px] py-[5px] rounded-md">
                 <h1>
                   {incompleteErr}
-                  {emailErr} {schoolErr}
+                  {emailErr}
+                  {schoolErr}
+                  {emailFormatErr}
                 </h1>
               </div>
             )}
