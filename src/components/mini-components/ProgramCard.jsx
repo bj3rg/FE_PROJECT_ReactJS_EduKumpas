@@ -9,6 +9,7 @@ export const ProgramCard = ({
   public_private,
   school_location,
   school_image,
+  school_website,
   id,
   index,
 }) => {
@@ -36,7 +37,7 @@ export const ProgramCard = ({
           <NavLink
             to={`/schools/${school_name}/${id}/${school_location}/${public_private}/${encodeURIComponent(
               school_image
-            )}`}
+            )}/${encodeURIComponent(school_website)}`}
           >
             <button className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 font-medium rounded-full text-lg px-8 py-2 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 me-2 mb-2">
               Browse

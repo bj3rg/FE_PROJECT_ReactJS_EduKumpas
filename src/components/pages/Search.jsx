@@ -194,6 +194,7 @@ export const Search = () => {
               school_logo={schoolItem.school_logo}
               school_type={schoolItem.school_type}
               school_image={schoolItem.school_image}
+              school_website={schoolItem.school_website}
             />
           ))}
         </div>
@@ -216,6 +217,7 @@ export const Search = () => {
                 public_private={schoolItem ? schoolItem.public_private : ""}
                 school_location={schoolItem ? schoolItem.school_location : ""}
                 school_image={schoolItem ? schoolItem.school_image : ""}
+                school_website={schoolItem.school_website}
               />
             );
           })}

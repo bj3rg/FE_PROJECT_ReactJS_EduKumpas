@@ -50,7 +50,7 @@ function SchoolsListCard({ school_type }) {
                   school.school_location
                 }/${school.public_private}/${encodeURIComponent(
                   school.school_image
-                )}`}
+                )}/${encodeURIComponent(school.school_website)}`}
               >
                 <button className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 font-medium rounded-full text-lg px-12 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 me-2 mb-2">
                   Browse

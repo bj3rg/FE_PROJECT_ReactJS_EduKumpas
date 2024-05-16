@@ -11,12 +11,18 @@ import { SchoolDetailBar } from "../mini-components/SchoolDetailBar";
 import { useState, useEffect } from "react";
 
 export const Main_School = () => {
-  const { schoolName, id, school_location, public_private, school_image } =
-    useParams();
+  const {
+    schoolName,
+    id,
+    school_location,
+    public_private,
+    school_image,
+    school_website,
+  } = useParams();
 
   const decodedSchoolImage = decodeURIComponent(school_image);
   const [activeTab, setActiveTab] = useState("programs"); // Initial active tab
-
+  const decodedWebsite = decodeURIComponent(school_website);
   useEffect(() => {
     const handlePopState = () => {
       const activeTabFromURL = window.location.pathname.split("/")[2]; // Extract active tab from URL
@@ -34,8 +40,12 @@ export const Main_School = () => {
       "",
       `/schools/${schoolName}/${id}/${school_location}/${public_private}/${encodeURIComponent(
         school_image
-      )}`
+      )}/${encodeURIComponent(school_website)}`
     ); // Update URL with active tab
+  };
+
+  const addEventListener = () => {
+    window.open(decodedWebsite, "_blank");
   };
 
   const renderActiveComponent = () => {
@@ -65,6 +75,12 @@ export const Main_School = () => {
           <h1 className="text-4xl break-words">{schoolName}</h1>
           <h5 className="text-xl break-words">{school_location}</h5>
           <h5 className="text-xl">{public_private} School</h5>
+          <button
+            className="border p-2 bg-gray-200 w-[30%] hover:bg-blue-200 rounded-md"
+            onClick={addEventListener}
+          >
+            Visit School Website
+          </button>
         </div>
         <div className="flex items-center">
           <img
