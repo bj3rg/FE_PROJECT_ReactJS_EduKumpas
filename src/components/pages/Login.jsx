@@ -80,7 +80,7 @@ export const Login = () => {
         <div className="flex items-center w-[100%]  lg:w-[60%]  flex-col rounded-md p-2 gap-2">
           <form action="" className="flex flex-col items-end border gap-2 p-8">
             <div className="flex items-center gap-2">
-              <label htmlFor="email">Email or Username</label>
+              <label htmlFor="email">Username</label>
 
               <input
                 type="text"

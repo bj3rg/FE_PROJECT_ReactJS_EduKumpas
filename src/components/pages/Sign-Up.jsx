@@ -99,7 +99,9 @@ export const Sign_Up = () => {
         <div className="flex  justify-center flex-col rounded-md p-2 gap-2">
           <form action="" className="flex flex-col items-end border gap-2 p-8">
             <div className="flex items-center gap-2">
-              <label htmlFor="userName">Username</label>
+              <label className="" htmlFor="userName">
+                Username
+              </label>
               <input
                 type="text"
                 id="userName"
@@ -159,7 +161,7 @@ export const Sign_Up = () => {
               />
             </div>
             <div className="flex items-center gap-2">
-              <label htmlFor="email">Contact No.</label>
+              <label htmlFor="email">Contact</label>
               <input
                 type="text"
                 placeholder="Enter 11-digit contact no:"
@@ -173,7 +175,7 @@ export const Sign_Up = () => {
               />
             </div>
             <div className="flex items-center gap-2">
-              <label htmlFor="schoolName">School Name</label>
+              <label htmlFor="schoolName">School</label>
               <input
                 type="text"
                 id="schoolName"
