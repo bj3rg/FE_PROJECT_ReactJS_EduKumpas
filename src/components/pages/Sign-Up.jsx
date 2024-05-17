@@ -84,7 +84,7 @@ export const Sign_Up = () => {
           <NavLink to="/home">
             <img src={imgTest} alt="" />
           </NavLink>
-          <h1 className="leading-7">
+          <h1 className="leading-7 text-justify">
             Join EduKumpas to showcase your school and connect with students
             looking for their dream educational institution. Be part of a
             platform that simplifies the school search process for students and
@@ -241,7 +241,7 @@ export const Sign_Up = () => {
               </NavLink>
             </div>
           </form>
-          <div className="flex flex-row gap-1 items-center">
+          <div className="flex flex-row justify-center sm:justify-start gap-1 items-center">
             <p className="text-xs">Already have an account?</p>
             <NavLink to="/login">
               <button className="underline flex-end text-xs">Login</button>
