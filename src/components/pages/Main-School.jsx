@@ -76,7 +76,7 @@ export const Main_School = () => {
           <h5 className="text-xl break-words">{school_location}</h5>
           <h5 className="text-xl">{public_private} School</h5>
           <button
-            className="border p-2 bg-gray-200 w-[30%] hover:bg-blue-200 rounded-md"
+            className="border p-2 bg-gray-200 w-[60%] md:w-[40%] lg:w-[30%] hover:bg-blue-200 rounded-md"
             onClick={addEventListener}
           >
             Visit School Website
